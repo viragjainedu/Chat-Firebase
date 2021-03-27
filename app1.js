@@ -1,28 +1,25 @@
+var sender = prompt('Enter ur name')
+document.getElementById('name').innerHTML += sender
 
-function writeUserData() {
-  var database = firebase.database();
-
-  var userId = "2";
-  var name = "viragasdas3";
-  var email = "aajasn3";
-  // console.log(userId)
-  // alert(userId)
-  firebase.database().ref('users').set({
-    name: name,
-    email: email,
-  });
+function sendMessage(){
+  var msg = document.getElementById('text').value;
+  firebase.database().ref("messages").push().set({
+    sender: sender,
+    msg: msg,
+    time: '0' 
+  })
 }
-// [END rtdb_write_new_user]
-// function writeUserData() {
-  
-//   var chat = document.getElementById("text").value; 
-  
-//   console.log(chat)
-//   firebase.database().ref('chats' + userId).set({
-//     chat : chat
-//   });
 
-// }
+var database = firebase.database().ref();
+
+  firebase.database().ref('messages').on('child_added' , function(snapshot){
+    var html = ""
+    var msg = snapshot.val().msg;
+    var sender = snapshot.val().sender;
+    var time = snapshot.val().time;
+    console.log(msg,sender,time)
+    document.getElementById('chats').innerHTML += '<p>'+msg + '(sent by-'+ sender +')' + '</p>';
+  });
 
 function readUserData() {
   var database = firebase.database().ref();

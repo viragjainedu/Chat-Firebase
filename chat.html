@@ -19,6 +19,7 @@
     </div>
 
     <h2 style="text-align:center">Chat Page</h2>
+    <h4 style="text-align:end"id="name"></h4>
         
     
       <div class="col-sm-3 col-sm-offset-4 frame">
@@ -27,10 +28,13 @@
             <div class="msj-rta macro" style="margin:auto">                        
                 <div class="text text-r" style="background:whitesmoke !important">
                     
-                    <button onclick="writeUserData()">Enter</button>
-                        <input id="text" class="mytext" placeholder="Type a message"/>
-                    
-                    
+                    <div id="chats">
+                    </div>
+                   
+                      <input id="text" class="mytext" placeholder="Type a message"/>                    
+                      <center>
+                      <button onclick="sendMessage()">Enter</button>
+                    </center>
                 </div> 
             </div>
         </div>
