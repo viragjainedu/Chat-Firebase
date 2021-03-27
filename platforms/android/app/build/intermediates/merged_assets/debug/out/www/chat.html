@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="container" style="background-color: #45a049;">
+  
+    <div class="row">
+    
+             
+    <div class="col">
+        <a href="#" class="google btn" onclick="googleSignInOut()"><i class="fa fa-arrow fa-fw" >
+          </i> Logout
+        </a>
+    </div>
+
+    <h2 style="text-align:center">Chat Page</h2>
+    <h4 style="text-align:end"id="name"></h4>
+        
+    
+      <div class="col-sm-3 col-sm-offset-4 frame">
+        <ul></ul>
+        <div>
+            <div class="msj-rta macro" style="margin:auto">                        
+                <div class="text text-r" style="background:whitesmoke !important">
+                    
+                    <div id="chats">
+                    </div>
+                   
+                      <input id="text" class="mytext" placeholder="Type a message"/>                    
+                      <center>
+                      <button onclick="sendMessage()">Enter</button>
+                    </center>
+                </div> 
+            </div>
+        </div>
+    </div>   
+
+  
+
+
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+  
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+  
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyAboCBXyIqMWjHSf9qdHRbJFHtf7gLqnPw",
+          authDomain: "chat-app-e0d5a.firebaseapp.com",
+          databaseURL: "https://chat-app-e0d5a-default-rtdb.firebaseio.com",
+          projectId: "chat-app-e0d5a",
+          storageBucket: "chat-app-e0d5a.appspot.com",
+          messagingSenderId: "106312291203",
+          appId: "1:106312291203:web:7defc28d82466c2f441cb6"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+          
+      </script>
+    
+    <script src="app1.js"></script>
+
+</div>
+
+
+</body>
+</html>
